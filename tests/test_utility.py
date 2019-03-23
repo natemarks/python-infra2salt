@@ -20,5 +20,5 @@ def test_create_yaml_files(tmp_path):
     create_yaml_files(str(tmp_path), input_data)
     result = get_yaml_files(str(tmp_path))
 
-    assert len(result['first']) == 3
-    assert len(result['second']) == 3
+    assert len(result['first.yml']) == 3
+    assert len(result['second.yml']) == 3

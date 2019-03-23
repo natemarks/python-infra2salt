@@ -4,6 +4,8 @@ from typing import Dict, Any
 def get_yaml_files(target_directory):
     """Get data from yaml files (non-recursively) from target_directory
 
+    Skip files that throw YAML Parsing exceptions
+
     :param str target_directory: location for target files
 
     :rtype: Dict[str, Any]
@@ -14,12 +16,13 @@ def get_yaml_files(target_directory):
     result = {}
 
     for file in os.listdir(target_directory):
-        if file.endswith(".yml"):
-            file_path = os.path.join(target_directory, file)
+        file_path = os.path.join(target_directory, file)
+        try:
             with open(file_path) as f:
                 yaml_data = yaml.load(f)
-            key = file[:-len(".yml")]
-            result[key] = yaml_data
+            result[file] = yaml_data
+        except yaml.YAMLError:
+            continue
 
     return result
 

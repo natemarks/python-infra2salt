@@ -8,3 +8,10 @@ Feature: Generate pillar from configured and discovered data
     Given a path to a valid and complete yaml seed data file
       When a user runs the program
       Then a valid pillar directory structure is created
+
+
+
+  Scenario: Return seed data summary in dry run mode
+    Given a path to a valid and complete yaml seed data file
+      When a user runs the program
+      Then a valid pillar directory structure is created
