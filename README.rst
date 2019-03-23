@@ -75,7 +75,36 @@ Documentation
 
 https://python-infra2salt.readthedocs.io/
 
+IaC Taxonomy
 
+
+intent ->  infrastructure ->  Taxonomized IaC
+
+intent:
+ - data for event workflows (enrich/transform/clarify)
+ - data for reporting workflows (select/correlate)
+ - data for maintenance workflows (plan/test/correlate)
+
+intent data integrations:
+ - documentation
+ - IaC
+ - monitoring
+ - reporting
+ - scheduling
+ - access control
+
+
+
+
+connect to infrastructure datastore (AWS, GCP, azure, on-prem custom) adn populate pillar data
+
+global data and inter-environetmn lookups
+
+
+
+pillar: mgmt/dev/prod environment data
+ - openvpn client accounts and addresses
+ - salt-ssh roster data (minionless connections from masters in the environment)
 Development
 ===========
 
